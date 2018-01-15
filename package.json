@@ -1,0 +1,23 @@
+{
+  "name": "inHTML",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "parcel-bundler": "^1.4.1",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@hyperapp/html": "^1.0.1",
+    "@hyperapp/logger": "^0.4.1",
+    "@hyperapp/router": "^0.4.1",
+    "hyperapp": "^1.0.1"
+  }
+}
