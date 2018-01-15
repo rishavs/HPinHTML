@@ -69,7 +69,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({6:[function(require,module,exports) {
+})({8:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -353,7 +353,7 @@ function app(state, actions, view, container) {
     return element;
   }
 }
-},{}],11:[function(require,module,exports) {
+},{}],12:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -380,7 +380,7 @@ function Link(props, children) {
 
   return (0, _hyperapp.h)("a", props, children);
 }
-},{"hyperapp":6}],15:[function(require,module,exports) {
+},{"hyperapp":8}],17:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -429,7 +429,7 @@ function parseRoute(path, url, options) {
 
   return createMatch(false, path, url.slice(0, -1), params);
 }
-},{}],9:[function(require,module,exports) {
+},{}],11:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -450,7 +450,7 @@ function Route(props) {
     location: location
   });
 }
-},{"./parseRoute":15}],10:[function(require,module,exports) {
+},{"./parseRoute":17}],13:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -460,7 +460,7 @@ exports.Switch = Switch;
 function Switch(props, children) {
   return children[0];
 }
-},{}],12:[function(require,module,exports) {
+},{}],14:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -471,7 +471,7 @@ function Redirect(props) {
   var location = props.location || window.location;
   history.replaceState(props.from || location.pathname, "", props.to);
 }
-},{}],13:[function(require,module,exports) {
+},{}],15:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -526,7 +526,7 @@ var location = exports.location = {
     };
   }
 };
-},{}],7:[function(require,module,exports) {
+},{}],9:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -577,7 +577,7 @@ Object.defineProperty(exports, "location", {
     return _location.location;
   }
 });
-},{"./Link":11,"./Route":9,"./Switch":10,"./Redirect":12,"./location":13}],14:[function(require,module,exports) {
+},{"./Link":12,"./Route":11,"./Switch":13,"./Redirect":14,"./location":15}],16:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -591,7 +591,7 @@ exports.default = function (prevState, action, nextState) {
   console.log("%c next state", "color: #4CAF50; font-weight: bold;", nextState);
   console.groupEnd();
 };
-},{}],8:[function(require,module,exports) {
+},{}],10:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -634,7 +634,7 @@ var _defaultLog = require("./defaultLog");
 var _defaultLog2 = _interopRequireDefault(_defaultLog);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./defaultLog":14}],17:[function(require,module,exports) {
+},{"./defaultLog":16}],6:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -645,10 +645,12 @@ var _hyperapp = require("hyperapp");
 
 var _router = require("@hyperapp/router");
 
-var Navbar = (0, _hyperapp.h)("nav", [(0, _hyperapp.h)(_router.Link, { "to": "/" }, "Home"), (0, _hyperapp.h)(_router.Link, { "to": "/About" }, "About")]);
+var Navbar = function Navbar() {
+  return (0, _hyperapp.h)("nav", {}, [(0, _hyperapp.h)(_router.Link, { "to": "/" }, "Home |"), (0, _hyperapp.h)(_router.Link, { "to": "/about" }, "About")]);
+};
 
 exports.default = Navbar;
-},{"hyperapp":6,"@hyperapp/router":7}],3:[function(require,module,exports) {
+},{"hyperapp":8,"@hyperapp/router":9}],4:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -668,7 +670,7 @@ var Layout = function Layout(props, page) {
 };
 
 exports.default = Layout;
-},{"hyperapp":6,"./Navbar.js":17}],4:[function(require,module,exports) {
+},{"hyperapp":8,"./Navbar.js":6}],3:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -680,7 +682,7 @@ var _hyperapp = require("hyperapp");
 var Home = (0, _hyperapp.h)("h1", {}, "Home");
 
 exports.default = Home;
-},{"hyperapp":6}],5:[function(require,module,exports) {
+},{"hyperapp":8}],5:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -692,7 +694,7 @@ var _hyperapp = require("hyperapp");
 var About = (0, _hyperapp.h)("h1", {}, "About");
 
 exports.default = About;
-},{"hyperapp":6}],2:[function(require,module,exports) {
+},{"hyperapp":8}],2:[function(require,module,exports) {
 'use strict';
 
 var _hyperapp = require("hyperapp");
@@ -735,7 +737,7 @@ var view = function view() {
 
 var main = (0, _logger2.default)()(_hyperapp.app)(state, actions, view, document.body);
 var unsubscribe = _router.location.subscribe(main.location);
-},{"hyperapp":6,"@hyperapp/router":7,"@hyperapp/logger":8,"./components/Layout.js":3,"./pages/Home.js":4,"./pages/About.js":5}],0:[function(require,module,exports) {
+},{"hyperapp":8,"@hyperapp/router":9,"@hyperapp/logger":10,"./components/Layout.js":4,"./pages/Home.js":3,"./pages/About.js":5}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
 function Module() {
@@ -753,7 +755,7 @@ function Module() {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://' + window.location.hostname + ':6962/');
+  var ws = new WebSocket('ws://' + window.location.hostname + ':4119/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 
